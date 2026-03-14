@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VnMap - Ví dụ nâng cao (JS)</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: sans-serif; }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            padding: 12px 16px;
+            background: #1565c0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        header h1 { margin: 0; font-size: 18px; }
+
+        #map { flex: 1; }
+
+        /* Popup styles */
+        .location-popup { font-family: sans-serif; font-size: 13px; min-width: 200px; }
+        .location-popup h3 { margin: 0 0 6px; font-size: 15px; color: #1565c0; }
+        .location-popup p  { margin: 0 0 4px; color: #555; }
+        .location-popup .coords { font-size: 11px; color: #999; margin-top: 8px; }
+
+        /* Sidebar */
+        #sidebar {
+            position: absolute;
+            top: 64px;
+            left: 12px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 12px;
+            width: 200px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.2);
+            z-index: 1;
+        }
+
+        #sidebar h2 { margin: 0 0 10px; font-size: 14px; }
+
+        .location-item {
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .15s;
+        }
+
+        .location-item:hover { background: #e3f2fd; }
+        .location-item.active { background: #bbdefb; font-weight: 600; }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+    <header>
+        <h1>VnMap - Ví dụ nâng cao</h1>
+    </header>
+    <div id="map"></div>
+</div>
+
+<div id="sidebar">
+    <h2>Địa điểm nổi bật</h2>
+    <div id="location-list"></div>
+</div>
+
+<script>
+    var locations = [
+        {
+            id: 1,
+            name: 'Hà Nội',
+            desc: 'Thủ đô nước Cộng hoà XHCN Việt Nam',
+            lat: 21.0245,
+            lng: 105.8412,
+            zoom: 13,
+        },
+        {
+            id: 2,
+            name: 'TP. Hồ Chí Minh',
+            desc: 'Thành phố lớn nhất Việt Nam',
+            lat: 10.8231,
+            lng: 106.6297,
+            zoom: 13,
+        },
+        {
+            id: 3,
+            name: 'Đà Nẵng',
+            desc: 'Thành phố đáng sống nhất Việt Nam',
+            lat: 16.0544,
+            lng: 108.2022,
+            zoom: 13,
+        },
+        {
+            id: 4,
+            name: 'Hội An',
+            desc: 'Phố cổ di sản UNESCO',
+            lat: 15.8801,
+            lng: 108.3380,
+            zoom: 15,
+        },
+    ];
+
+    var mapInstance = null;
+    var markers = [];
+    var activeId = null;
+
+    function renderVnMap() {
+        // Tạo bản đồ
+        mapInstance = new vnMap.Map('map', {
+            center: [106.6297, 10.8231],
+            zoom: 6,
+        });
+
+        // Thêm controls
+        mapInstance.addControl(new vnMap.NavigationControl(), 'top-right');
+        mapInstance.addControl(
+            new vnMap.ScaleControl({ maxWidth: 120, unit: 'metric' }),
+            'bottom-left'
+        );
+
+        mapInstance.on('load', function () {
+            addMarkers();
+            renderSidebar();
+        });
+
+        // Hiện toạ độ khi click
+        mapInstance.on('click', function (e) {
+            console.log('[VnMap] click:', e.lngLat.lat.toFixed(6), e.lngLat.lng.toFixed(6));
+        });
+    }
+
+    function addMarkers() {
+        locations.forEach(function (loc) {
+            var popup = new vnMap.Popup({
+                closeButton: true,
+                anchor: 'bottom',
+                offset: [0, -40],
+                maxWidth: '260px',
+            }).setHTML(
+                '<div class="location-popup">' +
+                    '<h3>' + loc.name + '</h3>' +
+                    '<p>' + loc.desc + '</p>' +
+                    '<div class="coords">📍 ' + loc.lat + ', ' + loc.lng + '</div>' +
+                '</div>'
+            );
+
+            var marker = new vnMap.Marker({ color: '#1565c0' })
+                .setLngLat([loc.lng, loc.lat])
+                .setPopup(popup)
+                .addTo(mapInstance);
+
+            marker.getElement().addEventListener('click', function () {
+                marker.togglePopup();
+                setActive(loc.id);
+            });
+
+            markers.push({ id: loc.id, marker: marker });
+        });
+    }
+
+    function renderSidebar() {
+        var list = document.getElementById('location-list');
+        list.innerHTML = '';
+
+        locations.forEach(function (loc) {
+            var item = document.createElement('div');
+            item.className = 'location-item';
+            item.id = 'loc-' + loc.id;
+            item.innerHTML = '📍 ' + loc.name;
+            item.addEventListener('click', function () {
+                flyTo(loc);
+            });
+            list.appendChild(item);
+        });
+    }
+
+    function flyTo(loc) {
+        mapInstance.flyTo({
+            center: [loc.lng, loc.lat],
+            zoom: loc.zoom,
+            duration: 1200,
+        });
+        setActive(loc.id);
+    }
+
+    function setActive(id) {
+        if (activeId) {
+            var prev = document.getElementById('loc-' + activeId);
+            if (prev) prev.classList.remove('active');
+        }
+        activeId = id;
+        var curr = document.getElementById('loc-' + id);
+        if (curr) curr.classList.add('active');
+    }
+</script>
+
+<!-- Thay YOUR_KEY bằng API key thực từ dashboard -->
+<script src="http://localhost:5000/static?key=G5kN10AJJ8mEIZvJ&callback=renderVnMap"></script>
+
+</body>
+</html>
