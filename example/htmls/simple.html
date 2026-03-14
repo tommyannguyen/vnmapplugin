@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .company-card {
+            font-family: sans-serif;
+            font-size: 13px;
+            max-width: 300px;
+            line-height: 1.5;
+        }
+        
+        .title-meta {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        
+        .company-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 2px;
+            color: #1a1a1a;
+        }
+        
+        .company-name-small {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .address {
+            background: #f5f5f5;
+            border-radius: 6px;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .info-row {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .info-value {
+            color: #333;
+        }
+        
+        .no-reviews {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Render static vnMap</h1>
+
+    <div id="vnMap" style="width:100%;height:400px;"></div>
+
+    <script>
+        function renderVnMap() {
+            var title = `
+    <div class="company-card">
+      <div class="title-meta">THÔNG TIN CÔNG TY</div>
+      <h1 class="company-name">Công Ty TNHH Kỹ Thuật Một Mình Tui</h1>
+      <div class="company-name-small">ONLY ME TECHNICAL COMPANY LIMITED</div>
+      <div class="address">
+        <div style="font-weight:600;margin-bottom:4px;">📍 Địa chỉ:</div>
+        <div>340/49/15 Trần Thị Năm, P. Trung Mỹ Tây, Thành phố Hồ Chí Minh, Việt Nam</div>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Mô tả:</span>
+        <span class="info-value">Công ty hoạt động trong lĩnh vực kỹ thuật, cung cấp các giải pháp và dịch vụ chất lượng tại khu vực TP.HCM.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Đánh giá:</span>
+        <span class="info-value"><span class="no-reviews">⭐ 5 sao</span></span>
+      </div>
+    </div>
+  `;
+
+            const centerLocation = [106.6243881, 10.8704843]
+            var map = new vnMap.Map(document.getElementById("vnMap"), {
+                center: centerLocation,
+                zoom: 13,
+            });
+
+            map.on('load', function() {
+                var popup = new vnMap.Popup({
+                        anchor: 'bottom',
+                        offset: [0, -44],
+                        closeButton: true
+                    })
+                    .setHTML(title);
+
+                var marker = new vnMap.Marker({
+                        draggable: true
+                    })
+                    .setLngLat(centerLocation)
+                    .setPopup(popup)
+                    .addTo(map);
+
+                marker.getElement().addEventListener('click', function() {
+                    marker.togglePopup();
+                });
+
+                marker.on('drag', function() {
+                    var pos = marker.getLngLat();
+                    console.log('dragged to', pos.lat, pos.lng);
+                });
+            });
+        }
+    </script>
+
+    <!-- Replace YOUR_KEY with your actual API key from the dashboard -->
+    <script src="http://localhost:5000/static?key=G5kN10AJJ8mEIZvJ&callback=renderVnMap"></script>
+</body>
+
+</html>
