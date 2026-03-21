@@ -28,6 +28,6 @@ export async function boot(): Promise<void> {
   // A placeholder token is required by the SDK; real auth is the apiKey in tile URLs
   mapboxgl.accessToken = 'pk.placeholder'
 
-  exposeVnMapApi(mapboxgl, tileUrl, glyphsUrl)
+  exposeVnMapApi(mapboxgl, tileUrl, glyphsUrl, origin, apiKey)
   fireCallback(callbackName)
 }
