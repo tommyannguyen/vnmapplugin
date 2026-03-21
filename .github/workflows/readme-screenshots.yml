@@ -1,0 +1,65 @@
+name: Capture README Screenshots
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "example/src/examples/**"
+      - "example/e2e/readmeScreenshots.e2e.js"
+
+jobs:
+  screenshots:
+    runs-on: macos-14
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Install example dependencies
+        working-directory: example
+        run: yarn install --immutable
+
+      - name: Install CocoaPods
+        working-directory: example/ios
+        run: pod install
+
+      - name: Build example app for Detox
+        working-directory: example
+        run: npx detox build -c ios
+
+      - name: Boot iOS Simulator
+        run: |
+          xcrun simctl boot "iPhone 14 Pro" || true
+
+      - name: Run README screenshot tests
+        working-directory: example
+        run: npx detox test -c ios e2e/readmeScreenshots.e2e.js --headless
+
+      - name: Upload screenshots as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: readme-screenshots
+          path: example/readme_assets/*.png
+          retention-days: 30
+
+      - name: Commit screenshots
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add example/readme_assets/*.png
+          git diff --staged --quiet || git commit -m "chore: update README screenshots from automation tests"
+          git push

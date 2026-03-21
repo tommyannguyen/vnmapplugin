@@ -1,77 +1,63 @@
 
 # VnMapPlugin - Maps SDK for React Native
 
-<table style="border: none; border-width: 0px">
-<tr style="border: none; border-width: 0px">
-<td style="border: none; border-width: 0px">
-<img src="./assets/vnmapplugin_logo.png" height="75">
-</td>
-<td style="border: none; border-width: 0px">
-<img src="./assets/React-icon.svg" height="75">
-</td>
-</tr>
-</table>
+[![npm version](https://badge.fury.io/js/%40vnmapplugin%2Fmaps.svg)](https://badge.fury.io/js/%40vnmapplugin%2Fmaps)
+[![Publish @vnmapplugin/maps to npm](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/npm-publish.yml)
 
-|  [![npm version](https://badge.fury.io/js/%40vnmapplugin%2Fmaps.svg)](https://badge.fury.io/js/%40vnmapplugin%2Fmaps)  | [![iOS & Android Build](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/on-push.yml/badge.svg?branch=main)](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/on-push.yml?branch=main)  |
-|---|---|
-
-
-
-_A React Native library for building maps with native map SDKs for iOS and Android_
+_A React Native library for building maps with the VnMapPlugin native SDK for iOS and Android._
 
 ---
+
+## Screenshots
+
+> All screenshots below are captured automatically via [Detox E2E tests](./example/e2e/readmeScreenshots.e2e.js).
 
 <table>
 <tr>
-<td colspan="2" align="center">
-<img src="./assets/intro-examples.png"/>
-</td>
+<td align="center"><b>Show Map</b></td>
+<td align="center"><b>Vietnam Boundary</b></td>
 </tr>
 <tr>
-<td>
-<img src="./assets/beta-maps-example-point-annotation-960-d280759f6a3d8d75458f399c7a044926.webp" width="1200"/>
-</td>
+<td><img src="./example/readme_assets/show_map.png" width="300"/></td>
+<td><img src="./example/readme_assets/vietnam_boundary.png" width="300"/></td>
 </tr>
 <tr>
-<td>
-<img src="./assets/beta-maps-guides-migrate-3d-terrain-960-48b1080117817ccfd92e434d0df7546f.webp" width="1200"/>
-</td>
+<td align="center"><b>Custom Callout</b></td>
+<td align="center"><b>Data Driven Circle Colors</b></td>
 </tr>
 <tr>
-<td>
-<img src="./assets/maps-examples-building-extrusions-960-aaa140cce77da4e8b2dd216032b191b6.webp" width="1200"/>
-</td>
+<td><img src="./example/readme_assets/custom_callout.png" width="300"/></td>
+<td><img src="./example/readme_assets/data_driven_circle_colors.png" width="300"/></td>
 </tr>
-
 <tr>
-<td>
-<img src="./assets/maps-examples-data-driven-symbols-960-2e2061a6b8127ef305c1b6c159f8dc65.webp" width="1200"/>
-</td>
+<td align="center"><b>Choropleth Layer</b></td>
+<td align="center"><b>Clustering Earthquakes</b></td>
+</tr>
+<tr>
+<td><img src="./example/readme_assets/choropleth_layer.png" width="300"/></td>
+<td><img src="./example/readme_assets/clustering_earthquakes.png" width="300"/></td>
+</tr>
+<tr>
+<td align="center"><b>Image Overlay</b></td>
+<td align="center"><b>Animated Line</b></td>
+</tr>
+<tr>
+<td><img src="./example/readme_assets/image_overlay.png" width="300"/></td>
+<td><img src="./example/readme_assets/animated_line.png" width="300"/></td>
 </tr>
 </table>
 
 ---
 
-### Supported Implementations
-At the moment we support VnMapPlugin (v10) and VnMapPlugin (v11) beta.
-We default to VnMapPlugin (v10).
-
-_See [iOS](ios/install.md) & [Android](android/install.md) setup guide for using v11 beta_
-
-
-
-
 ## Prerequisite
 
-1. Get your VnMapPlugin Access Token from your account.
-
+1. Obtain your VnMapPlugin access token from your [VnMapPlugin account](https://github.com/tommyannguyen/vnmapplugin).
 
 ## Dependencies
 
-- [node](https://nodejs.org)
-- [npm](https://www.npmjs.com/)
-- [React Native](https://facebook.github.io/react-native/) (0.70+, older versions from 0.64+ might or might not work)
-
+- [Node.js](https://nodejs.org) (v22+)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [React Native](https://reactnative.dev/) (0.79+)
 
 ## Installation
 
@@ -81,31 +67,15 @@ npm install @vnmapplugin/maps
 yarn add @vnmapplugin/maps
 ```
 
-### Getting Started
-For more information, check out our [Getting Started](/docs/GettingStarted.md) section
+### Platform Setup
 
-## Run Project
-Before you run your project be sure you have completed the Installation Guides for Android or iOS.
+- [iOS installation guide](ios/install.md)
+- [Android installation guide](android/install.md)
 
-### Run iOS Simulator
-```sh
-# Run with yarn
-yarn run ios
+For detailed instructions, see the [Getting Started](/docs/GettingStarted.md) guide.
 
-# or Run with NPM
-npm run ios
-```
+## Quick Start
 
-### Run Android Emulator
-```sh
-# Run with yarn
-yarn run android
-
-# or Run with NPM
-npm run android
-```
-
-## Adding a map
 ```js
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -121,7 +91,7 @@ const App = () => {
       </View>
     </View>
   );
-}
+};
 
 export default App;
 
@@ -136,11 +106,23 @@ const styles = StyleSheet.create({
     width: 300,
   },
   map: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 ```
+
+## Run the Example App
+
+```sh
+# iOS
+cd example && yarn ios
+
+# Android
+cd example && yarn android
+```
+
 ---
+
 ## Documentation
 
 ### Components
@@ -197,24 +179,38 @@ const styles = StyleSheet.create({
 
 ## Expo Support
 
-This package is not available in the [Expo Go](https://expo.io/client) app. Learn how you can use it with [custom dev clients](/plugin/install.md).
+This package is not available in [Expo Go](https://expo.io/client). Learn how to use it with [custom dev clients](/plugin/install.md).
 
 ## Testing with Jest
-
-This library provides some mocks which are necessary for running tests.
-
-Example:
 
 ```json
 "jest": {
   "preset": "react-native",
-  "setupFilesAfterEnv": ["@vnmapplugin/maps/setup-jest"],
+  "setupFilesAfterSetup": ["@vnmapplugin/maps/setup-jest"],
   "transformIgnorePatterns": [
-      "node_modules/(?!(...|@vnmapplugin))"
+    "node_modules/(?!(...|@vnmapplugin))"
   ]
 }
 ```
----
-## Developer Group
 
-Have a question or need some help? Use [Github discussions](https://github.com/tommyannguyen/vnmapplugin/discussions).
+## Capturing README Screenshots
+
+Screenshots are generated automatically by Detox E2E tests:
+
+```sh
+cd example
+npx detox build -c ios
+npx detox test -c ios e2e/readmeScreenshots.e2e.js
+```
+
+Screenshots are saved to `example/readme_assets/` and can also be triggered via the [Capture README Screenshots](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/readme-screenshots.yml) GitHub Action.
+
+---
+
+## Contributing
+
+Have a question or need help? Use [GitHub Discussions](https://github.com/tommyannguyen/vnmapplugin/discussions).
+
+## License
+
+[MIT](./LICENSE.md)
