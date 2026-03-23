@@ -31,12 +31,12 @@ function createWeatherPopup(station: WeatherStation): any {
     <div style="font-family:system-ui,sans-serif;min-width:180px;font-size:13px;">
       <div style="font-weight:600;margin-bottom:6px;">${station.stationName}</div>
       <div style="color:#555;line-height:1.6;">
-        ${station.temperature != null ? `<div>Nhiet do: <b>${station.temperature}°C</b></div>` : ''}
-        ${station.humidity != null ? `<div>Do am: <b>${station.humidity}%</b></div>` : ''}
-        ${station.windSpeed != null ? `<div>Gio: <b>${station.windSpeed} m/s ${station.windDirection ?? ''}</b></div>` : ''}
-        ${station.precipitation != null ? `<div>Mua: <b>${station.precipitation} mm</b></div>` : ''}
-        ${station.pressure != null ? `<div>Ap suat: <b>${station.pressure} hPa</b></div>` : ''}
-        <div style="color:#999;margin-top:4px;">Cach ${(station.distance / 1000).toFixed(1)} km</div>
+        ${station.temperature != null ? `<div>Nhiệt độ: <b>${station.temperature}°C</b></div>` : ''}
+        ${station.humidity != null ? `<div>Độ ẩm: <b>${station.humidity}%</b></div>` : ''}
+        ${station.windSpeed != null ? `<div>Gió: <b>${station.windSpeed} m/s ${station.windDirection ?? ''}</b></div>` : ''}
+        ${station.precipitation != null ? `<div>Lượng mưa: <b>${station.precipitation} mm</b></div>` : ''}
+        ${station.pressure != null ? `<div>Áp suất: <b>${station.pressure} hPa</b></div>` : ''}
+        <div style="color:#999;margin-top:4px;">Tầm nhìn ${(station.distance / 1000).toFixed(1)} km</div>
       </div>
     </div>
   `
