@@ -14,6 +14,7 @@ export async function boot(): Promise<void> {
   const { apiKey, callbackName, origin } = resolveParams()
 
   const tileUrl = `${origin}/api/map/tiles/{z}/{x}/{y}.pbf?apiKey=${encodeURIComponent(apiKey)}`
+  const satTileUrl = `${origin}/api/map/satellite/{z}/{x}/{y}.jpg?apiKey=${encodeURIComponent(apiKey)}`
   const glyphsUrl = `${origin}/api/map/font/{fontstack}/{range}?apiKey=${encodeURIComponent(apiKey)}`
 
   const mapboxgl = await loadMapboxGL(origin).catch((err: Error) => {
@@ -28,6 +29,6 @@ export async function boot(): Promise<void> {
   // A placeholder token is required by the SDK; real auth is the apiKey in tile URLs
   mapboxgl.accessToken = 'pk.placeholder'
 
-  exposeVnMapApi(mapboxgl, tileUrl, glyphsUrl, origin, apiKey)
+  exposeVnMapApi(mapboxgl, tileUrl, satTileUrl, glyphsUrl, origin, apiKey)
   fireCallback(callbackName)
 }

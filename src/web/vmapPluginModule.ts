@@ -462,12 +462,103 @@ export function buildVectorTileStyle(
   };
 }
 
+// Satellite-only raster style backed by the gateway's /satellite endpoint.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function buildSatelliteStyle(tileUrl: string, attribution: string): any {
+  return {
+    version: 8,
+    sources: {
+      satellite: {
+        type: 'raster',
+        tiles: [tileUrl],
+        tileSize: 256,
+        minzoom: 0,
+        maxzoom: 17,
+        attribution,
+      },
+    },
+    layers: [
+      { id: 'background', type: 'background', paint: { 'background-color': '#0b1622' } },
+      { id: 'satellite', type: 'raster', source: 'satellite' },
+    ],
+  };
+}
+
+// Hybrid: satellite raster + OpenMapTiles vector roads/labels on top.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function buildHybridStyle(
+  satelliteTileUrl: string,
+  vectorTileUrl: string,
+  minZoom: number,
+  maxZoom: number,
+  attribution: string,
+  glyphsUrl = 'https://fonts.openmaptiles.org/{fontstack}/{range}.pbf',
+): any {
+  return {
+    version: 8,
+    glyphs: glyphsUrl,
+    sources: {
+      satellite: {
+        type: 'raster',
+        tiles: [satelliteTileUrl],
+        tileSize: 256,
+        minzoom: 0,
+        maxzoom: 17,
+        attribution,
+      },
+      openmaptiles: {
+        type: 'vector',
+        tiles: [vectorTileUrl],
+        minzoom: minZoom,
+        maxzoom: maxZoom,
+        attribution,
+      },
+    },
+    layers: [
+      { id: 'background', type: 'background', paint: { 'background-color': '#0b1622' } },
+      { id: 'satellite', type: 'raster', source: 'satellite' },
+      { id: 'road-motorway', type: 'line', source: 'openmaptiles', 'source-layer': 'transportation',
+        filter: ['match', ['get', 'class'], ['motorway', 'trunk'], true, false],
+        paint: { 'line-color': '#ffb74d', 'line-width': ['interpolate', ['linear'], ['zoom'], 6, 0.5, 12, 2, 16, 5] } },
+      { id: 'road-primary', type: 'line', source: 'openmaptiles', 'source-layer': 'transportation',
+        filter: ['==', ['get', 'class'], 'primary'],
+        paint: { 'line-color': '#fff59d', 'line-width': ['interpolate', ['linear'], ['zoom'], 8, 0.4, 14, 1.5, 17, 4] } },
+      { id: 'road-secondary', type: 'line', source: 'openmaptiles', 'source-layer': 'transportation',
+        filter: ['==', ['get', 'class'], 'secondary'],
+        minzoom: 10,
+        paint: { 'line-color': '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.4, 15, 1.2, 18, 3] } },
+      { id: 'boundary', type: 'line', source: 'openmaptiles', 'source-layer': 'boundary',
+        filter: ['<=', ['get', 'admin_level'], 4],
+        paint: { 'line-color': '#ffffff', 'line-opacity': 0.6, 'line-width': 1, 'line-dasharray': [3, 2] } },
+      { id: 'place-major', type: 'symbol', source: 'openmaptiles', 'source-layer': 'place',
+        filter: ['match', ['get', 'class'], ['city', 'town'], true, false],
+        layout: {
+          'text-field': ['coalesce', ['get', 'name:vi'], ['get', 'name:latin'], ['get', 'name']],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 4, 11, 10, 16],
+        },
+        paint: { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 1.5 } },
+      { id: 'road-name', type: 'symbol', source: 'openmaptiles', 'source-layer': 'transportation_name',
+        minzoom: 12,
+        layout: {
+          'symbol-placement': 'line',
+          'text-field': ['coalesce', ['get', 'name:vi'], ['get', 'name:latin'], ['get', 'name']],
+          'text-font': ['Noto Sans Regular'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 12, 10, 17, 14],
+        },
+        paint: { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 1.5 } },
+    ],
+  };
+}
+
 // Create and export the plugin module
 const vmapPluginModule = {
   LineJoin,
   StyleURL,
   setAccessToken,
   buildVectorTileStyle,
+  buildSatelliteStyle,
+  buildHybridStyle,
 };
 
 export default vmapPluginModule;
