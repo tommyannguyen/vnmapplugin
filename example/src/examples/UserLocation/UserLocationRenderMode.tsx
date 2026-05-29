@@ -6,7 +6,7 @@ import {
   Camera,
   UserLocationRenderMode as UserLocationRenderModeType,
   UserTrackingMode,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { Button, Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ButtonGroup, Text } from '@rneui/base';

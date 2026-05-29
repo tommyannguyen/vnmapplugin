@@ -1,5 +1,5 @@
 import React from 'react';
-import { snapshotManager, StyleURL } from '@rnmapbox/maps';
+import { snapshotManager, StyleURL } from '@vnmapplugin/maps';
 import {
   View,
   Image,

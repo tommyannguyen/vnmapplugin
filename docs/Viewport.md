@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { Viewport } from '@rnmapbox/maps';
+import { Viewport } from '@vnmapplugin/maps';
 
 Viewport
 

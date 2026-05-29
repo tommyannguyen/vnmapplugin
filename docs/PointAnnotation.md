@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { PointAnnotation } from '@rnmapbox/maps';
+import { PointAnnotation } from '@vnmapplugin/maps';
 
 PointAnnotation
 

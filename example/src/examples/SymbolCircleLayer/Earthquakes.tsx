@@ -7,7 +7,7 @@ import {
   SymbolLayer,
   SymbolLayerStyle,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { FeatureCollection } from 'geojson';
 import React, { useRef, useState } from 'react';
 import { FAB, Icon, ListItem } from '@rneui/base';

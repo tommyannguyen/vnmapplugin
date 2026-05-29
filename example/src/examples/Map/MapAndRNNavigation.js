@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-native';
-import { MapView, UserLocation, Camera } from '@rnmapbox/maps';
+import { MapView, UserLocation, Camera } from '@vnmapplugin/maps';
 
 import MapInModal from './MapInModal';
 

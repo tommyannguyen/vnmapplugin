@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, Camera, VectorSource, FillLayer } from '@rnmapbox/maps';
+import { MapView, Camera, VectorSource, FillLayer } from '@vnmapplugin/maps';
 
 const styles = {
   boxFill: {

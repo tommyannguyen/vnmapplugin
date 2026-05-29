@@ -1,5 +1,5 @@
 import React from 'react';
-import Mapbox, { type ImageEntry } from '@rnmapbox/maps';
+import Mapbox, { type ImageEntry } from '@vnmapplugin/maps';
 
 import type { ExampleWithMetadata } from '../common/ExampleMetadata';
 

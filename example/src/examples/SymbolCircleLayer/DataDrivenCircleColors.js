@@ -1,5 +1,5 @@
 import React from 'react';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 
 const styles = {
   circles: {

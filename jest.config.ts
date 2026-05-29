@@ -15,7 +15,7 @@ const config: Config = {
     '<rootDir>/lib/',
   ],
   moduleNameMapper: {
-    '^@rnmapbox/maps$': '<rootDir>/src',
+    '^@vnmapplugin/maps$': '<rootDir>/src',
   },
 };
 

@@ -8,7 +8,7 @@ import {
   LineJoin,
   Animated,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { View, StyleSheet } from 'react-native';
 import { Button } from '@rneui/base';
 import { lineString as makeLineString } from '@turf/helpers';

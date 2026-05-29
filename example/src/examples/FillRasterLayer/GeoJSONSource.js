@@ -7,7 +7,7 @@ import {
   VectorSource,
   BackgroundLayer,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import gridPattern from '../../assets/grid_pattern.png';

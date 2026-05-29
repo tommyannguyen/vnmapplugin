@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { ShapeSource } from '@rnmapbox/maps';
+import { ShapeSource } from '@vnmapplugin/maps';
 
 ShapeSource
 

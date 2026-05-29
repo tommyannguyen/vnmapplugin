@@ -6,7 +6,7 @@ import {
   Image,
   SymbolLayer,
   ShapeSource,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { StyleProp, Text, ViewStyle } from 'react-native';
 import { FeatureCollection } from 'geojson';
 

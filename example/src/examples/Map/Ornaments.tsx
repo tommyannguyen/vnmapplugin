@@ -1,4 +1,4 @@
-import { MapView, Camera, Images } from '@rnmapbox/maps';
+import { MapView, Camera, Images } from '@vnmapplugin/maps';
 import { useState } from 'react';
 import { Button, ImageSourcePropType, StyleSheet, Text } from 'react-native';
 import { Divider } from '@rneui/base';

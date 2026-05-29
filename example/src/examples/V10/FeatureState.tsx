@@ -1,5 +1,5 @@
 import { ComponentProps, useCallback, useRef } from 'react';
-import { Camera, FillLayer, MapView, ShapeSource } from '@rnmapbox/maps';
+import { Camera, FillLayer, MapView, ShapeSource } from '@vnmapplugin/maps';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata';
 

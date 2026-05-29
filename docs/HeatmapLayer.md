@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { HeatmapLayer } from '@rnmapbox/maps';
+import { HeatmapLayer } from '@vnmapplugin/maps';
 
 HeatmapLayer
 

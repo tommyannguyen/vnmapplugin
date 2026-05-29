@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "@rnmapbox/maps": ["./src/index"]
+      "@vnmapplugin/maps": ["./src/index"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,

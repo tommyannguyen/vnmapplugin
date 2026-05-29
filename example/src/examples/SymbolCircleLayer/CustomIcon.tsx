@@ -7,7 +7,7 @@ import {
   SymbolLayer,
   Images,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 // @ts-ignore - @turf packages have type resolution issues with package.json exports
 import { featureCollection, feature, point } from '@turf/helpers';
 

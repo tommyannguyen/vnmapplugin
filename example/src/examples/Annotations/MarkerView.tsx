@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 
 import Bubble from '../common/Bubble';
 

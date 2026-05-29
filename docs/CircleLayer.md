@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { CircleLayer } from '@rnmapbox/maps';
+import { CircleLayer } from '@vnmapplugin/maps';
 
 CircleLayer
 

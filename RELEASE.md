@@ -22,4 +22,4 @@ Edit generated `release notes` if needed
 
 ## Monitor the repos issues for updates
 
-Once the release is out the door (on [npm](https://www.npmjs.com/package/@rnmapbox/maps)), make sure to monitor the [issues](https://github.com/rnmapbox/maps/issues) closely for problems the community might encounter
+Once the release is out the door (on [npm](https://www.npmjs.com/package/@vnmapplugin/maps)), make sure to monitor the [issues](https://github.com/rnmapbox/maps/issues) closely for problems the community might encounter

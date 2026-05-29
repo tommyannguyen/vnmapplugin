@@ -6,7 +6,7 @@ import {
   Camera,
   Models,
   ModelLayer,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 const styles = {
   mapView: { flex: 1 },

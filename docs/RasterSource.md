@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { RasterSource } from '@rnmapbox/maps';
+import { RasterSource } from '@vnmapplugin/maps';
 
 RasterSource
 

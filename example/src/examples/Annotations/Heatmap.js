@@ -1,5 +1,5 @@
 import React from 'react';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import { SF_OFFICE_COORDINATE } from '../../utils';

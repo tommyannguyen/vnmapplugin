@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { Images } from '@rnmapbox/maps';
+import { Images } from '@vnmapplugin/maps';
 
 Images
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the React Native Mapbox Maps SDK (@rnmapbox/maps) - a community-supported library for building maps with Mapbox Maps SDK for iOS and Android in React Native applications.
+This is the React Native Mapbox Maps SDK (@vnmapplugin/maps) - a community-supported library for building maps with Mapbox Maps SDK for iOS and Android in React Native applications.
 
 ## Prerequisites
 

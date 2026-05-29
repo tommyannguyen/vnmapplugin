@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, Camera, UserLocation, locationManager } from '@rnmapbox/maps';
+import { MapView, Camera, UserLocation, locationManager } from '@vnmapplugin/maps';
 import { ButtonGroup } from '@rneui/base';
 
 const styles = {

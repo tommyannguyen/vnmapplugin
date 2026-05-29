@@ -4,7 +4,7 @@ import {
   Camera,
   UserLocation,
   type CameraPadding,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { ButtonGroup } from '@rneui/base';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { Atmosphere } from '@rnmapbox/maps';
+import { Atmosphere } from '@vnmapplugin/maps';
 
 Atmosphere
 

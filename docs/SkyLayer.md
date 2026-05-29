@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { SkyLayer } from '@rnmapbox/maps';
+import { SkyLayer } from '@vnmapplugin/maps';
 
 SkyLayer
 

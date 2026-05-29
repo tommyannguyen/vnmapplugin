@@ -19,10 +19,10 @@ import {
 } from './generateCode';
 
 let pkg: { name: string; version?: string } = {
-  name: '@rnmapbox/maps',
+  name: '@vnmapplugin/maps',
 };
 try {
-  pkg = require('@rnmapbox/maps/package.json');
+  pkg = require('@vnmapplugin/maps/package.json');
 } catch {
   // empty catch block
 }
@@ -88,7 +88,7 @@ export const addConstantBlock = (
     RNMapboxMapsUseV11,
   }: MapboxPlugProps,
 ): string => {
-  const tag = `@rnmapbox/maps-rnmapboxmapsimpl`;
+  const tag = `@vnmapplugin/maps-rnmapboxmapsimpl`;
 
   if (
     RNMapboxMapsVersion == null &&
@@ -170,7 +170,7 @@ export const addMapboxInstallerBlock = (
   blockName: InstallerBlockName,
 ): string =>
   mergeContents({
-    tag: `@rnmapbox/maps-${blockName}_installer`,
+    tag: `@vnmapplugin/maps-${blockName}_installer`,
     src,
     newSrc: `    $RNMapboxMaps.${blockName}_install(installer)`,
     anchor: new RegExp(`^\\s*${blockName}_install do \\|installer\\|`),
@@ -316,7 +316,7 @@ const addLibCppFilter = (appBuildGradle: string): string => {
   }
 
   return mergeContents({
-    tag: `@rnmapbox/maps-libcpp`,
+    tag: `@vnmapplugin/maps-libcpp`,
     src: appBuildGradle,
     newSrc: `packagingOptions {
         pickFirst 'lib/x86/libc++_shared.so'
@@ -392,7 +392,7 @@ const appendContents = ({
 
 export const addMapboxMavenRepo = (src: string): string =>
   appendContents({
-    tag: '@rnmapbox/maps-v2-maven',
+    tag: '@vnmapplugin/maps-v2-maven',
     src,
     newSrc: gradleMaven,
     comment: '//',

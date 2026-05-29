@@ -5,7 +5,7 @@ import Mapbox, {
   MapView,
   offlineManager,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { Button, Dimensions, TextInput } from 'react-native';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc

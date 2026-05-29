@@ -6,7 +6,7 @@ import {
   FillLayer,
   VectorSource,
   Camera,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import Bubble from '../common/Bubble';
 

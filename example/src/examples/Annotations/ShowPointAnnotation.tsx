@@ -8,7 +8,7 @@ import {
   PointAnnotation,
   ShapeSource,
   getAnnotationsLayerID,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { Point, Position } from 'geojson';
 import { Button } from '@rneui/base';
 

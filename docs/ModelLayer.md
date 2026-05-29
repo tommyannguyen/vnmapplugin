@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { ModelLayer } from '@rnmapbox/maps';
+import { ModelLayer } from '@vnmapplugin/maps';
 
 ModelLayer
 

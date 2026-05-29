@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { offlineManagerLegacy } from '@rnmapbox/maps';
+import { offlineManagerLegacy } from '@vnmapplugin/maps';
 
 offlineManagerLegacy
 

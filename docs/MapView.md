@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { MapView } from '@rnmapbox/maps';
+import { MapView } from '@vnmapplugin/maps';
 
 MapView
 

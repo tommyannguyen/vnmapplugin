@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import { MapView, Camera, MarkerView } from '@rnmapbox/maps';
+import { MapView, Camera, MarkerView } from '@vnmapplugin/maps';
 
 function MarkerViewExample() {
   return (

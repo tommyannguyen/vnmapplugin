@@ -5,7 +5,7 @@ import {
   SymbolLayer,
   Camera,
   CircleLayer,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { ComponentProps } from 'react';
 import { View, Image, Text, ImageSourcePropType } from 'react-native';
 

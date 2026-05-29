@@ -8,7 +8,7 @@ import {
   Camera,
   VectorSource,
   LineLayer,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 const styles = {
   mapView: { flex: 1 },

@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { Models } from '@rnmapbox/maps';
+import { Models } from '@vnmapplugin/maps';
 
 Models
 

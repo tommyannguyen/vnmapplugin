@@ -27,7 +27,7 @@ allprojects {
 
 ### Using non default mapbox version
 
-*Warning*: If you set a custom version, make sure you revisit, any time you update @rnmapbox/maps. Setting it to earlier version than what we exepect will likely result in a build error.
+*Warning*: If you set a custom version, make sure you revisit, any time you update @vnmapplugin/maps. Setting it to earlier version than what we exepect will likely result in a build error.
 
 Set `RNMapboxMapsVersion` in `android/build.gradle > buildscript > ext` section
 

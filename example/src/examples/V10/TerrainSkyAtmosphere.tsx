@@ -8,7 +8,7 @@ import {
   RasterDemSource,
   Atmosphere,
   Camera,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 Logger.setLogLevel('verbose');
 

@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { StyleImport } from '@rnmapbox/maps';
+import { StyleImport } from '@vnmapplugin/maps';
 
 StyleImport
 

@@ -7,7 +7,7 @@ import {
   Logger,
   MapView,
   ShapeSource,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import bbox from '@turf/bbox';
 import { Feature, Point, Position } from 'geojson';
 import { useCallback, useMemo, useState } from 'react';

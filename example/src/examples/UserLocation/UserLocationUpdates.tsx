@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Text } from 'react-native';
-import { MapView, Camera, UserLocation, Location } from '@rnmapbox/maps';
+import { MapView, Camera, UserLocation, Location } from '@vnmapplugin/maps';
 
 import Bubble from '../common/Bubble';
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-example-doc

@@ -6,7 +6,7 @@ const config: Config = {
   setupFiles: ['./jest.setup.ts'],
   verbose: true,
   moduleNameMapper: {
-    '^@rnmapbox/maps$': path.resolve(__dirname, '../src/index.ts'),
+    '^@vnmapplugin/maps$': path.resolve(__dirname, '../src/index.ts'),
   },
 };
 

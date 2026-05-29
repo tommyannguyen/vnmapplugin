@@ -1,5 +1,5 @@
 import React from 'react';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 import { Text } from 'react-native';
 
 import Bubble from '../common/Bubble';

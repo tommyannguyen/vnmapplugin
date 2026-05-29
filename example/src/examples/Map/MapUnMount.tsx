@@ -1,4 +1,4 @@
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 import { useEffect, useState } from 'react';
 import { Button } from 'react-native';
 

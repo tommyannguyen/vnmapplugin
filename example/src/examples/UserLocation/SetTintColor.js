@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, Camera, UserLocation } from '@rnmapbox/maps';
+import { MapView, Camera, UserLocation } from '@vnmapplugin/maps';
 import { ButtonGroup } from '@rneui/base';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

@@ -5,7 +5,7 @@ import {
   VectorSource,
   FillLayer,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import colors from '../../styles/colors';

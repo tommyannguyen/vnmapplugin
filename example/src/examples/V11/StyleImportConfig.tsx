@@ -1,6 +1,6 @@
 import { Button } from 'react-native';
 import { useState } from 'react';
-import { MapView, Camera, StyleImport } from '@rnmapbox/maps';
+import { MapView, Camera, StyleImport } from '@vnmapplugin/maps';
 
 const StyleImportConfig = () => {
   const [lightPreset, setLightPreset] = useState('night');

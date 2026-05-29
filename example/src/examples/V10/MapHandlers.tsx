@@ -6,7 +6,7 @@ import {
   type MapState,
   MapView,
   ShapeSource,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import type {
   Feature,
   GeoJsonProperties,

@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { SymbolLayer } from '@rnmapbox/maps';
+import { SymbolLayer } from '@vnmapplugin/maps';
 
 SymbolLayer
 

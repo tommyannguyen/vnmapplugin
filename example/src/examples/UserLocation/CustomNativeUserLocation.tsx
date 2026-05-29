@@ -7,7 +7,7 @@ import {
   LocationPuck,
   Images,
   Image,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata';
 

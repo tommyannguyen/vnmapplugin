@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Pressable, Text, View } from 'react-native';
 import { Button, Divider } from '@rneui/base';
-import { Camera, Logger, MapView, MarkerView } from '@rnmapbox/maps';
+import { Camera, Logger, MapView, MarkerView } from '@vnmapplugin/maps';
 import { Position } from 'geojson';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import { MapView, Camera, Style, StyleURL } from '@rnmapbox/maps';
+import { MapView, Camera, Style, StyleURL } from '@vnmapplugin/maps';
 
 import StyleJsonExample from '../../assets/style-json-example.json';
 import StyleJsonExample2 from '../../assets/style-json-example2.json';

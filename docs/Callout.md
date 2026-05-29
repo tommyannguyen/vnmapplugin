@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { Callout } from '@rnmapbox/maps';
+import { Callout } from '@vnmapplugin/maps';
 
 Callout
 

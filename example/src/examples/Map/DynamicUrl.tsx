@@ -6,7 +6,7 @@ import {
   MapView,
   ShapeSource,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import Bubble from '../common/Bubble';
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc

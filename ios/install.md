@@ -1,7 +1,7 @@
 # iOS Installation
 
 
-`@rnmapbox/maps` via `npm` or `yarn`.
+`@vnmapplugin/maps` via `npm` or `yarn`.
 
 <br/>
 
@@ -50,7 +50,7 @@ Read on if you want to edit your Mapbox version or flavor.
 
 ## Using a custom version of the Mapbox SDK
 
-You can also override the version to use. *Warning:* if you set a version, then later update, the `rnamapbox/maps` library it's possible that you'll end up using Mapbox older version than supported. Make sure you revise this value with `@rnmapbox/maps` updates. Also note that for 11.0 or later versions you'll need to set `$RNMapboxMapsUseV11 = true`, see bellow
+You can also override the version to use. *Warning:* if you set a version, then later update, the `rnamapbox/maps` library it's possible that you'll end up using Mapbox older version than supported. Make sure you revise this value with `@vnmapplugin/maps` updates. Also note that for 11.0 or later versions you'll need to set `$RNMapboxMapsUseV11 = true`, see bellow
 
 ```ruby
 # Warning: only for advanced use cases, only do this if you know what you're doing.
@@ -73,7 +73,7 @@ If using expo managed workflow, set the "RNMapboxMapsVersion" variable. See the 
 
 ## Troubleshooting
 
-### Pod install fails on upgrade of @rnmapbox/maps with `could not find compatible versions for pod "MapboxMaps"`
+### Pod install fails on upgrade of @vnmapplugin/maps with `could not find compatible versions for pod "MapboxMaps"`
 
 Example message:
 ```log
@@ -82,7 +82,7 @@ Example message:
     MapboxMaps (= 10.15.0, ~> 10.15.0)
 
   In Podfile:
-    rnmapbox-maps (from `../node_modules/@rnmapbox/maps`) was resolved to 10.0.15, which depends on
+    rnmapbox-maps (from `../node_modules/@vnmapplugin/maps`) was resolved to 10.0.15, which depends on
       MapboxMaps (~> 10.16.0)
 ```
 

@@ -14,7 +14,7 @@ module.exports = async function (env, argv) {
   const config = await createExpoWebpackConfigAsync(
     {
       ...env,
-      babel: { dangerouslyAddModulePathsToTranspile: ["@rnmapbox/maps"] },
+      babel: { dangerouslyAddModulePathsToTranspile: ["@vnmapplugin/maps"] },
     },
     argv
   );

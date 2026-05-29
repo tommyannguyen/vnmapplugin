@@ -8,7 +8,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
-import Mapbox, { offlineManager, MapView, Camera } from '@rnmapbox/maps';
+import Mapbox, { offlineManager, MapView, Camera } from '@vnmapplugin/maps';
 import geoViewport from '@mapbox/geo-viewport';
 
 import sheet from '../../styles/sheet';

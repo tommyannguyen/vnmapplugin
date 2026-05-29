@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { VectorSource } from '@rnmapbox/maps';
+import { VectorSource } from '@vnmapplugin/maps';
 
 VectorSource
 

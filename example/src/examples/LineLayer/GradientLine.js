@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, Camera, ShapeSource, LineLayer } from '@rnmapbox/maps';
+import { MapView, Camera, ShapeSource, LineLayer } from '@vnmapplugin/maps';
 
 const styles = {
   matchParent: {

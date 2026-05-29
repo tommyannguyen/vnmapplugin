@@ -3,7 +3,7 @@ import {
   Camera,
   RasterArraySource,
   RasterParticleLayer,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 const styles = {
   matchParent: { flex: 1 },

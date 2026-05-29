@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { MarkerView } from '@rnmapbox/maps';
+import { MarkerView } from '@vnmapplugin/maps';
 
 MarkerView
 

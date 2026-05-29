@@ -6,7 +6,7 @@ import {
   ShapeSource,
   FillLayer,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import nycJSON from '../../assets/nyc_geojson.json';

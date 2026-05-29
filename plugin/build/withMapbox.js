@@ -9,10 +9,10 @@ const path_1 = __importDefault(require("path"));
 const config_plugins_1 = require("expo/config-plugins");
 const generateCode_1 = require("./generateCode");
 let pkg = {
-    name: '@rnmapbox/maps',
+    name: '@vnmapplugin/maps',
 };
 try {
-    pkg = require('@rnmapbox/maps/package.json');
+    pkg = require('@vnmapplugin/maps/package.json');
 }
 catch {
     // empty catch block
@@ -47,7 +47,7 @@ const addInstallerBlock = (src, blockName) => {
 };
 exports.addInstallerBlock = addInstallerBlock;
 const addConstantBlock = (src, { RNMapboxMapsImpl, RNMapboxMapsVersion, RNMapboxMapsDownloadToken, RNMapboxMapsUseV11, }) => {
-    const tag = `@rnmapbox/maps-rnmapboxmapsimpl`;
+    const tag = `@vnmapplugin/maps-rnmapboxmapsimpl`;
     if (RNMapboxMapsVersion == null &&
         RNMapboxMapsDownloadToken == null &&
         RNMapboxMapsUseV11 == null) {
@@ -103,7 +103,7 @@ const applyCocoaPodsModifications = (contents, { RNMapboxMapsImpl, RNMapboxMapsV
 };
 exports.applyCocoaPodsModifications = applyCocoaPodsModifications;
 const addMapboxInstallerBlock = (src, blockName) => (0, generateCode_1.mergeContents)({
-    tag: `@rnmapbox/maps-${blockName}_installer`,
+    tag: `@vnmapplugin/maps-${blockName}_installer`,
     src,
     newSrc: `    $RNMapboxMaps.${blockName}_install(installer)`,
     anchor: new RegExp(`^\\s*${blockName}_install do \\|installer\\|`),
@@ -190,7 +190,7 @@ const addLibCppFilter = (appBuildGradle) => {
         return appBuildGradle;
     }
     return (0, generateCode_1.mergeContents)({
-        tag: `@rnmapbox/maps-libcpp`,
+        tag: `@vnmapplugin/maps-libcpp`,
         src: appBuildGradle,
         newSrc: `packagingOptions {
         pickFirst 'lib/x86/libc++_shared.so'
@@ -249,7 +249,7 @@ const appendContents = ({ src, newSrc, tag, comment, }) => {
     return { contents: src, didClear: false, didMerge: false };
 };
 const addMapboxMavenRepo = (src) => appendContents({
-    tag: '@rnmapbox/maps-v2-maven',
+    tag: '@vnmapplugin/maps-v2-maven',
     src,
     newSrc: gradleMaven,
     comment: '//',

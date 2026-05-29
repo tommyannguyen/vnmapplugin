@@ -6,7 +6,7 @@ import {
   NativeUserLocation,
   ShapeSource,
   CircleLayer,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 const points: GeoJSON.Geometry = {
   type: 'GeometryCollection',

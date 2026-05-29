@@ -16,7 +16,7 @@ import {
   AnimatedExtractCoordinateFromArray,
   MarkerView,
   Atmosphere,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 Logger.setLogLevel('verbose');
 

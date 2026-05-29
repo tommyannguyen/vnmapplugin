@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { Camera } from '@rnmapbox/maps';
+import { Camera } from '@vnmapplugin/maps';
 
 Camera
 

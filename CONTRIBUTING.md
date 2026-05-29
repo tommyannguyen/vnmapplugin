@@ -9,7 +9,7 @@
 - Push and open a PR with your branch
 
 ## Example app
-The recommended way to develop is building the example app. Example app links in `@rnmapbox/maps` from parent directory. JavaScript changes for example in `src/components/MapView.tsx`, will be applied automatically.
+The recommended way to develop is building the example app. Example app links in `@vnmapplugin/maps` from parent directory. JavaScript changes for example in `src/components/MapView.tsx`, will be applied automatically.
 Some notes about example app:
 - example app are both for demonstrating how to use differenc components, so examples should be simple (and not all of them should be typescript)
 - example app can contains screens designed from through testing of a component, but it should be separate for simple components demonstrating the use of components

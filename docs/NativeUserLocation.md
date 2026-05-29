@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { NativeUserLocation } from '@rnmapbox/maps';
+import { NativeUserLocation } from '@vnmapplugin/maps';
 
 NativeUserLocation
 

@@ -8,7 +8,7 @@ import {
   RasterDemSource,
   Atmosphere,
   Camera,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, Camera, VectorSource, LineLayer } from '@rnmapbox/maps';
+import { MapView, Camera, VectorSource, LineLayer } from '@vnmapplugin/maps';
 
 const styles = {
   mapView: { flex: 1 },

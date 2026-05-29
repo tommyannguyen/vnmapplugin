@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapView, ShapeSource, FillLayer, StyleURL } from '@rnmapbox/maps';
+import { MapView, ShapeSource, FillLayer, StyleURL } from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import smileyFaceGeoJSON from '../../assets/smiley_face.json';

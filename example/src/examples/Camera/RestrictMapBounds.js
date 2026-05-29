@@ -5,7 +5,7 @@ import {
   ShapeSource,
   FillLayer,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import bboxPolygon from '@turf/bbox-polygon';
 
 import sheet from '../../styles/sheet';

@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { FillExtrusionLayer } from '@rnmapbox/maps';
+import { FillExtrusionLayer } from '@vnmapplugin/maps';
 
 FillExtrusionLayer
 

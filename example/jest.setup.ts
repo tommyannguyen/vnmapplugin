@@ -1,4 +1,4 @@
-jest.mock('@rnmapbox/maps', () => ({
+jest.mock('@vnmapplugin/maps', () => ({
   StyleURL: {
     Satellite: 'mapbox://styles/mapbox/satellite-v9',
   },

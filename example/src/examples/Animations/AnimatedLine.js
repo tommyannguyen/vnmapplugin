@@ -8,7 +8,7 @@ import {
   AnimatedExtractCoordinateFromArray,
   AnimatedCoordinatesArray,
   AnimatedShape,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 // @ts-ignore - Missing types for @turf packages
 import along from '@turf/along';
 // @ts-ignore - Missing types for @turf packages

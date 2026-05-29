@@ -63,7 +63,7 @@ const Config = {
                 'Repo example should complete - it should not use files from your project',
             },
             {
-              group: ['!react', '!react-native', '!@rnmapbox/maps'],
+              group: ['!react', '!react-native', '!@vnmapplugin/maps'],
               message: 'Should not use third-party libraries',
             },
           ],
@@ -114,7 +114,7 @@ const Config = {
                 'Repo example should complete - it should not use files from your project',
             },
             {
-              group: ['!react', '!react-native', '!@rnmapbox/maps'],
+              group: ['!react', '!react-native', '!@vnmapplugin/maps'],
               message: 'Should not use third-party libraries',
             },
           ],

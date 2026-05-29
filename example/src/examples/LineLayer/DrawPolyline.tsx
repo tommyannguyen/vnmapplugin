@@ -1,4 +1,4 @@
-import { Camera, LineLayer, MapView, ShapeSource } from '@rnmapbox/maps';
+import { Camera, LineLayer, MapView, ShapeSource } from '@vnmapplugin/maps';
 import { Button, View } from 'react-native';
 import {
   useState,

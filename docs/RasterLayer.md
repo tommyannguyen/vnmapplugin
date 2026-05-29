@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { RasterLayer } from '@rnmapbox/maps';
+import { RasterLayer } from '@vnmapplugin/maps';
 
 RasterLayer
 

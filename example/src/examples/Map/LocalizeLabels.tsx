@@ -1,4 +1,4 @@
-import { Camera, MapView } from '@rnmapbox/maps';
+import { Camera, MapView } from '@vnmapplugin/maps';
 
 const CENTER_COORD = [-74.00597, 40.71427];
 

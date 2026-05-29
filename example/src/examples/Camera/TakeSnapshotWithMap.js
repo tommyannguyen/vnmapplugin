@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { MapView, Camera, FillExtrusionLayer } from '@rnmapbox/maps';
+import { MapView, Camera, FillExtrusionLayer } from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import colors from '../../styles/colors';

@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { Terrain } from '@rnmapbox/maps';
+import { Terrain } from '@vnmapplugin/maps';
 
 Terrain
 

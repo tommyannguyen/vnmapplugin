@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { LineLayer } from '@rnmapbox/maps';
+import { LineLayer } from '@vnmapplugin/maps';
 
 LineLayer
 

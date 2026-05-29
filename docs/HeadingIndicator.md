@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { HeadingIndicator } from '@rnmapbox/maps';
+import { HeadingIndicator } from '@vnmapplugin/maps';
 
 HeadingIndicator
 

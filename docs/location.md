@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { location } from '@rnmapbox/maps';
+import { location } from '@vnmapplugin/maps';
 
 location
 

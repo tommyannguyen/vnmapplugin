@@ -6,7 +6,7 @@ import {
   FillLayer,
   LineLayer,
   StyleURL,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import vietnamGeoJSON from '../../assets/vietnam_boundaries.json';

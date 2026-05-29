@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { CustomLocationProvider } from '@rnmapbox/maps';
+import { CustomLocationProvider } from '@vnmapplugin/maps';
 
 CustomLocationProvider
 

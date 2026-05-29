@@ -1,6 +1,6 @@
 import React, { useState, useRef, memo, useMemo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { MapView, Camera } from '@rnmapbox/maps';
+import { MapView, Camera } from '@vnmapplugin/maps';
 
 // Expensive calculation function
 const expensiveCalculation = (input) => {

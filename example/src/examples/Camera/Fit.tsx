@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import isEqual from 'lodash.isequal';
-import { MapView, Camera, StyleURL, type CameraBounds } from '@rnmapbox/maps';
+import { MapView, Camera, StyleURL, type CameraBounds } from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc

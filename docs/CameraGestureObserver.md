@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { CameraGestureObserver } from '@rnmapbox/maps';
+import { CameraGestureObserver } from '@vnmapplugin/maps';
 
 CameraGestureObserver
 

@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { FillLayer } from '@rnmapbox/maps';
+import { FillLayer } from '@vnmapplugin/maps';
 
 FillLayer
 

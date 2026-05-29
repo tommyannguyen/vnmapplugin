@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { snapshotManager } from '@rnmapbox/maps';
+import { snapshotManager } from '@vnmapplugin/maps';
 
 snapshotManager
 

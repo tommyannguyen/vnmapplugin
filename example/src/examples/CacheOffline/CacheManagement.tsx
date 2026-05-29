@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import Mapbox, { MapView, Camera } from '@rnmapbox/maps';
+import Mapbox, { MapView, Camera } from '@vnmapplugin/maps';
 import {
   Alert,
   StyleSheet,

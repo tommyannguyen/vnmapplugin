@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Platform } from 'react-native';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 import { ButtonGroup } from '@rneui/base';
 
 const layerStyles = {

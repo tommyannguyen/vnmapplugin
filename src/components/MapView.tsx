@@ -39,7 +39,7 @@ if (RNMBXModule == null) {
 }
 if (!RNMBXModule.MapboxV10) {
   console.warn(
-    '@rnmapbox/maps: Non v10 implementations are deprecated and will be removed in next version - see https://github.com/rnmapbox/maps/wiki/Deprecated-RNMapboxImpl-Maplibre',
+    '@vnmapplugin/maps: Non v10 implementations are deprecated and will be removed in next version - see https://github.com/rnmapbox/maps/wiki/Deprecated-RNMapboxImpl-Maplibre',
   );
 }
 
@@ -1190,7 +1190,7 @@ class MapView extends NativeBridgeComponent(
     if (RNMBXModule.MapboxV10) {
       if (!this.deprecationLogged.contentInset) {
         console.warn(
-          '@rnmapbox/maps: contentInset is deprecated, use Camera padding instead.',
+          '@vnmapplugin/maps: contentInset is deprecated, use Camera padding instead.',
         );
         this.deprecationLogged.contentInset = true;
       }

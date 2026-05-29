@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { BackgroundLayer } from '@rnmapbox/maps';
+import { BackgroundLayer } from '@vnmapplugin/maps';
 
 BackgroundLayer
 

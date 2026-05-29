@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 import { ButtonGroup } from '@rneui/base';
 
 import sheet from '../../styles/sheet';

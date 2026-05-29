@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 import { Button } from '@rneui/base';
 
 import sheet from '../../styles/sheet';

@@ -8,7 +8,7 @@ import {
   LineLayer,
   offlineManager,
   VectorSource,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 
 import { ExampleWithMetadata } from '../common/ExampleMetadata';
 

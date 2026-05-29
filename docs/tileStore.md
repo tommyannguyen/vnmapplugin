@@ -3,7 +3,7 @@
   
 
 ```tsx
-import { tileStore } from '@rnmapbox/maps';
+import { tileStore } from '@vnmapplugin/maps';
 
 tileStore
 

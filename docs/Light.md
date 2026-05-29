@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { Light } from '@rnmapbox/maps';
+import { Light } from '@vnmapplugin/maps';
 
 Light
 

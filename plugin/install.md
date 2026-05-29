@@ -6,7 +6,7 @@ First install the package with [`expo`](https://docs.expo.io/workflow/expo-cli/#
 
 Install the latest release:
 ```sh
-expo install @rnmapbox/maps
+expo install @vnmapplugin/maps
 ```
 
 ## Plugin Configuration
@@ -18,7 +18,7 @@ After installing this package, add the [config plugin](https://docs.expo.io/guid
   "expo": {
     "plugins": [
       [
-        "@rnmapbox/maps",
+        "@vnmapplugin/maps",
         {
           "RNMapboxMapsVersion": "11.13.4"
         }
@@ -56,7 +56,7 @@ It's possible to overwrite the native SDK version with `RNMapboxMapsVersion`:
   "expo": {
     "plugins": [
       [
-        "@rnmapbox/maps",
+        "@vnmapplugin/maps",
         {
           "RNMapboxMapsVersion": "11.16.0"
         }
@@ -73,7 +73,7 @@ To use V11 just set the version to a 11 version, see [the ios guide](/ios/instal
   "expo": {
     "plugins": [
       [
-        "@rnmapbox/maps",
+        "@vnmapplugin/maps",
         {
           "RNMapboxMapsVersion": "11.13.4"
         }

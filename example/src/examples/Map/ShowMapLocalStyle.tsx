@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Alert } from 'react-native';
-import Mapbox from '@rnmapbox/maps';
+import Mapbox from '@vnmapplugin/maps';
 
 import sheet from '../../styles/sheet';
 import { ExampleWithMetadata } from '../common/ExampleMetadata'; // exclude-from-doc

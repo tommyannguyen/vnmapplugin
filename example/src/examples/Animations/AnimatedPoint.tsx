@@ -6,7 +6,7 @@ import {
   ShapeSource,
   CircleLayer,
   __experimental,
-} from '@rnmapbox/maps';
+} from '@vnmapplugin/maps';
 import { Position } from 'geojson';
 import { Divider, Slider, Text } from '@rneui/base';
 import { SafeAreaView } from 'react-native-safe-area-context';

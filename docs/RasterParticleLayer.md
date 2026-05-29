@@ -4,7 +4,7 @@
   
 
 ```tsx
-import { RasterParticleLayer } from '@rnmapbox/maps';
+import { RasterParticleLayer } from '@vnmapplugin/maps';
 
 RasterParticleLayer
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { MapView, FillLayer, Camera } from '@rnmapbox/maps';
+import { MapView, FillLayer, Camera } from '@vnmapplugin/maps';
 
 import Bubble from '../common/Bubble';
 
