@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "@vnmapplugin/maps",
   "version": "10.3.0",
   "description": "React Native library for building maps using VnMapPlugin native maps SDK for iOS and Android",
@@ -38,7 +38,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace @rnmapbox/maps-example",
+    "example": "yarn workspace @vnmapplugin/maps-example",
     "test": "yarn lint && yarn unittest",
     "typecheck": "tsc --noEmit",
     "lint": "yarn eslint .",

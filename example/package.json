@@ -1,5 +1,5 @@
-{
-  "name": "@rnmapbox/maps-example",
+﻿{
+  "name": "@vnmapplugin/maps-example",
   "main": "index.js",
   "version": "1.0.0",
   "private": true,

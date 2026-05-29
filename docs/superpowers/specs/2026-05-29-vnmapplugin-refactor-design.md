@@ -1,4 +1,4 @@
-# VnMapPlugin — Full Documentation Refactor & Cleanup
+﻿# VnMapPlugin — Full Documentation Refactor & Cleanup
 
 **Date:** 2026-05-29
 **Status:** Approved
@@ -40,7 +40,7 @@ Complete refactor and cleanup of all documentation and user-facing source files 
 | Old | New |
 |-----|-----|
 | `@rnmapbox/maps` | `@vnmapplugin/maps` |
-| `@rnmapbox/maps-example` | `@vnmapplugin/maps-example` |
+| `@vnmapplugin/maps-example` | `@vnmapplugin/maps-example` |
 | `rnmapbox/maps` (GitHub path) | `tommyannguyen/vnmapplugin` |
 | `Mapbox` (prose/headings) | `VnMapPlugin` |
 | `MapboxGL` | `VnMapPlugin` |
@@ -79,7 +79,7 @@ Located in `src/vmapPlugin.native.ts`. Values replaced with VnMapPlugin placehol
 
 ### Phase 2 — Global Search-Replace Pass
 Run in this order to avoid double-replace issues:
-1. `@rnmapbox/maps-example` → `@vnmapplugin/maps-example`
+1. `@vnmapplugin/maps-example` → `@vnmapplugin/maps-example`
 2. `@rnmapbox/maps` → `@vnmapplugin/maps`
 3. `rnmapbox/maps` → `tommyannguyen/vnmapplugin`
 4. `RNMapboxMaps` → `RNVnMapMaps` (covers all suffixed variants)

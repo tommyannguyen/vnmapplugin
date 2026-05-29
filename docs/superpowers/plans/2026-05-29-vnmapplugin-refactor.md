@@ -1,4 +1,4 @@
-# VnMapPlugin — Full Documentation Refactor & Cleanup — Implementation Plan
+﻿# VnMapPlugin — Full Documentation Refactor & Cleanup — Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -59,7 +59,7 @@ git commit -m "chore: remove legacy CHANGELOG.md and README-v10.md"
 
 ---
 
-### Task 2: Global replace — `@rnmapbox/maps-example`
+### Task 2: Global replace — `@vnmapplugin/maps-example`
 
 **Files:** All `.md`, `.ts`, `.tsx`, `.js`, `.mjs`, `.json`, `.yml`, `.yaml` (excluding `node_modules`, `.git`, `lib`, `.yarn`)
 
@@ -75,8 +75,8 @@ Get-ChildItem -Path $root -Recurse -File |
   Where-Object { $exts -contains $_.Extension -and $_.FullName -notmatch $excl } |
   ForEach-Object {
     $c = [System.IO.File]::ReadAllText($_.FullName, [Text.Encoding]::UTF8)
-    if ($c.Contains('@rnmapbox/maps-example')) {
-      [System.IO.File]::WriteAllText($_.FullName, $c.Replace('@rnmapbox/maps-example','@vnmapplugin/maps-example'), [Text.Encoding]::UTF8)
+    if ($c.Contains('@vnmapplugin/maps-example')) {
+      [System.IO.File]::WriteAllText($_.FullName, $c.Replace('@vnmapplugin/maps-example','@vnmapplugin/maps-example'), [Text.Encoding]::UTF8)
       Write-Host "Updated: $($_.Name)"
     }
   }
@@ -85,7 +85,7 @@ Get-ChildItem -Path $root -Recurse -File |
 - [ ] **Step 2: Verify — no remaining occurrences**
 
 ```powershell
-Select-String -Path "C:\Nca\vnmapplugin" -Pattern "@rnmapbox/maps-example" -Recurse `
+Select-String -Path "C:\Nca\vnmapplugin" -Pattern "@vnmapplugin/maps-example" -Recurse `
   -Include "*.md","*.ts","*.tsx","*.js","*.json","*.yml" |
   Where-Object { $_.Path -notmatch 'node_modules|\\lib\\|\.git|\.yarn' }
 ```
@@ -96,7 +96,7 @@ Expected: No output.
 
 ```bash
 git add -A
-git commit -m "chore: replace @rnmapbox/maps-example with @vnmapplugin/maps-example"
+git commit -m "chore: replace @vnmapplugin/maps-example with @vnmapplugin/maps-example"
 ```
 
 ---
