@@ -4486,9 +4486,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rnmapbox/maps-example@workspace:example":
+"@vnmapplugin/maps-example@workspace:example":
   version: 0.0.0-use.local
-  resolution: "@rnmapbox/maps-example@workspace:example"
+  resolution: "@vnmapplugin/maps-example@workspace:example"
   dependencies:
     "@babel/core": ^7.28.3
     "@babel/preset-env": ^7.28.3

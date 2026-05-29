@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "@vnmapplugin/maps",
   "version": "10.3.0",
   "description": "React Native library for building maps using VnMapPlugin native maps SDK for iOS and Android",
