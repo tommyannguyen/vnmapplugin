@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { Header } from '@rneui/base';
 
 import colors from '../../styles/colors';
+
+const logo = require('../../../../../assets/vnmapplugin_logo.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -12,6 +14,11 @@ const styles = StyleSheet.create({
   label: {
     color: colors.secondary.white,
     fontSize: 24,
+  },
+  logo: {
+    width: 32,
+    height: 32,
+    resizeMode: 'contain',
   },
 });
 
@@ -42,12 +49,16 @@ class MapHeader extends React.PureComponent {
         backgroundColor={this.props.backgroundColor}
         statusBarProps={statusBarProps}
         containerStyle={styles.container}
-        leftComponent={{
-          icon: this.props.onBack ? 'arrow-back' : '',
-          onPress: this.props.onBack,
-          color: colors.secondary.white,
-          underlayColor: this.props.backgroundColor,
-        }}
+        leftComponent={
+          this.props.onBack
+            ? {
+                icon: 'arrow-back',
+                onPress: this.props.onBack,
+                color: colors.secondary.white,
+                underlayColor: this.props.backgroundColor,
+              }
+            : { render: () => <Image source={logo} style={styles.logo} /> }
+        }
         centerComponent={{ text: this.props.label, style: styles.label }}
       />
     );
