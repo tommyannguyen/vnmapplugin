@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -20,18 +20,23 @@ export function SearchScreen() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Place[]>([]);
 
-  const doSearch = useCallback(
+  const currentLocationRef = useRef(state.currentLocation);
+  useEffect(() => {
+    currentLocationRef.current = state.currentLocation;
+  }, [state.currentLocation]);
+
+  const doSearch = useRef(
     debounce(async (text: string) => {
       if (!text.trim()) { setResults([]); return; }
-      const found = await GeocodingService.search(text, state.currentLocation);
+      const found = await GeocodingService.search(text, currentLocationRef.current);
       setResults(found);
     }, 300),
-    [state.currentLocation],
-  );
+  ).current;
 
   useEffect(() => {
     doSearch(query);
-  }, [query, doSearch]);
+    return () => doSearch.clear();
+  }, [query]);
 
   const handleSelect = useCallback((place: Place) => {
     navigationService.selectPlace(place);
