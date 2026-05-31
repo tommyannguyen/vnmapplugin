@@ -6,7 +6,9 @@
 
 **Architecture:** A singleton `NavigationService` owns all state (location, search, route). React components subscribe via `useNavigationState()`. `GeocodingService` and `RoutingService` are stateless clients called by `NavigationService`. The map renders via `@maplibre/maplibre-react-native` pointed at vnMap's OSM raster tiles.
 
-**Tech Stack:** React Native 0.81, TypeScript, `@maplibre/maplibre-react-native`, Pelias geocoding (`vnmap.tinhocanhminh.com.vn`), OSRM routing (`router.project-osrm.org`), Jest 30.
+**Tech Stack:** React Native 0.81, TypeScript, `@maplibre/maplibre-react-native` v11, Pelias geocoding (`vnmap.tinhocanhminh.com.vn`), OSRM routing (`router.project-osrm.org`), Jest 30.
+
+**MapLibre v11 import note:** Use named imports — `import { Map, Camera, GeoJSONSource, Layer, Marker, UserLocation } from '@maplibre/maplibre-react-native'`. There is no default export. Key API differences: `Map` (not `MapView`), `GeoJSONSource` with `data` prop (not `ShapeSource` with `shape`), unified `Layer` component with `style` prop (not `LineLayer`), `Marker` (not `MarkerView`), `mapStyle` prop accepts `string | StyleSpecification` (use `VNMAP_STYLE` object from brand.ts). No `setAccessToken` call needed.
 
 > **Phase 2 (Android Auto) is a separate plan.** This plan produces a fully working phone app on its own.
 
@@ -1215,7 +1217,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import { GeoJSONSource, Layer } from '@maplibre/maplibre-react-native';
 import { colors, radius, spacing } from '../styles/brand';
 import type { RouteMeta } from '../services/NavigationService';
 
@@ -1232,9 +1234,10 @@ export function RouteOverlay({ route, meta, onCancel }: RouteOverlayProps) {
   return (
     <>
       {/* Route line drawn on map */}
-      <MapLibreGL.ShapeSource id="route-source" shape={route}>
-        <MapLibreGL.LineLayer
+      <GeoJSONSource id="route-source" data={route}>
+        <Layer
           id="route-line"
+          type="line"
           style={{
             lineColor: colors.primary,
             lineWidth: 4,
@@ -1242,7 +1245,7 @@ export function RouteOverlay({ route, meta, onCancel }: RouteOverlayProps) {
             lineCap: 'round',
           }}
         />
-      </MapLibreGL.ShapeSource>
+      </GeoJSONSource>
 
       {/* Info banner */}
       <View style={styles.banner}>
@@ -1339,10 +1342,18 @@ Create `example/src/screens/MapScreen.tsx`:
 ```typescript
 import React, { useEffect, useRef, useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
-import MapLibreGL from '@maplibre/maplibre-react-native';
+import {
+  Map,
+  Camera,
+  type CameraRef,
+  UserLocation,
+  GeoJSONSource,
+  Layer,
+  Marker,
+} from '@maplibre/maplibre-react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { VNMAP_STYLE_JSON } from '../styles/brand';
+import { VNMAP_STYLE } from '../styles/brand';
 import { useNavigationState, navigationService } from '../services/NavigationService';
 import { LocationService } from '../services/LocationService';
 import { RoutingService } from '../services/RoutingService';
@@ -1352,7 +1363,7 @@ import { RouteOverlay } from '../components/RouteOverlay';
 
 export function MapScreen() {
   const navigation = useNavigation<any>();
-  const cameraRef = useRef<any>(null);
+  const cameraRef = useRef<CameraRef>(null);
   const state = useNavigationState();
 
   useEffect(() => {
@@ -1361,14 +1372,11 @@ export function MapScreen() {
   }, []);
 
   useEffect(() => {
-    if (state.currentLocation && cameraRef.current) {
-      cameraRef.current.setCamera({
-        centerCoordinate: [
-          state.currentLocation.longitude,
-          state.currentLocation.latitude,
-        ],
-        zoomLevel: 15,
-        animationDuration: 1000,
+    if (state.currentLocation) {
+      cameraRef.current?.flyTo({
+        center: [state.currentLocation.longitude, state.currentLocation.latitude],
+        zoom: 15,
+        duration: 1000,
       });
     }
   }, [state.currentLocation?.latitude, state.currentLocation?.longitude]);
@@ -1394,39 +1402,40 @@ export function MapScreen() {
 
   return (
     <View style={StyleSheet.absoluteFillObject}>
-      <MapLibreGL.MapView
+      <Map
         style={StyleSheet.absoluteFillObject}
-        styleJSON={VNMAP_STYLE_JSON}
+        mapStyle={VNMAP_STYLE}
         logoEnabled={false}
         attributionEnabled={false}
       >
-        <MapLibreGL.Camera
+        <Camera
           ref={cameraRef}
-          zoomLevel={13}
+          zoom={13}
           centerCoordinate={[106.6297, 10.8231]}
         />
-        <MapLibreGL.UserLocation visible />
+        <UserLocation visible />
 
         {state.activeRoute && (
-          <MapLibreGL.ShapeSource id="route-source" shape={state.activeRoute}>
-            <MapLibreGL.LineLayer
+          <GeoJSONSource id="route-source" data={state.activeRoute}>
+            <Layer
               id="route-line"
+              type="line"
               style={{ lineColor: '#00b8d4', lineWidth: 4, lineJoin: 'round', lineCap: 'round' }}
             />
-          </MapLibreGL.ShapeSource>
+          </GeoJSONSource>
         )}
 
         {state.selectedPlace && (
-          <MapLibreGL.MarkerView
+          <Marker
             coordinate={[
               state.selectedPlace.coordinate.longitude,
               state.selectedPlace.coordinate.latitude,
             ]}
           >
             <View style={styles.destPin} />
-          </MapLibreGL.MarkerView>
+          </Marker>
         )}
-      </MapLibreGL.MapView>
+      </Map>
 
       {!state.activeRoute && (
         <SearchBar onPress={() => navigation.navigate('Search')} />
