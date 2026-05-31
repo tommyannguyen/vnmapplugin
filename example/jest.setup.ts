@@ -1,12 +1,12 @@
 jest.mock('@maplibre/maplibre-react-native', () => ({
-  MapView: 'MapView',
+  Map: 'Map',
   Camera: 'Camera',
   UserLocation: 'UserLocation',
-  ShapeSource: 'ShapeSource',
-  LineLayer: 'LineLayer',
-  MarkerView: 'MarkerView',
-  setAccessToken: jest.fn(),
-  Logger: { setLogLevel: jest.fn() },
+  GeoJSONSource: 'GeoJSONSource',
+  Layer: 'Layer',
+  Marker: 'Marker',
+  RasterSource: 'RasterSource',
+  LogManager: { setLogLevel: jest.fn() },
 }));
 
 jest.mock('@react-navigation/native', () => ({

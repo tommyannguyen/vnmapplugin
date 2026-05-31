@@ -35,11 +35,11 @@ export const VNMAP_API_KEY = 'Op1TSPFL5a6ekOoW';
 export const VNMAP_BASE_URL = 'https://vnmap.tinhocanhminh.com.vn';
 export const OSRM_BASE_URL = 'https://router.project-osrm.org';
 
-export const VNMAP_STYLE_JSON = JSON.stringify({
-  version: 8,
+export const VNMAP_STYLE = {
+  version: 8 as const,
   sources: {
     vnmap: {
-      type: 'raster',
+      type: 'raster' as const,
       tiles: [
         `${VNMAP_BASE_URL}/api/map/styles/1/tile/{z}/{x}/{y}.png?key=${VNMAP_API_KEY}`,
       ],
@@ -50,8 +50,8 @@ export const VNMAP_STYLE_JSON = JSON.stringify({
   layers: [
     {
       id: 'vnmap-raster',
-      type: 'raster',
+      type: 'raster' as const,
       source: 'vnmap',
     },
   ],
-});
+};
