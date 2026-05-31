@@ -5,7 +5,7 @@ import { Point } from 'geojson';
 import Animated from '../utils/animated/Animated';
 import { AnimatedPoint } from '../classes';
 import { OnPressEvent } from '../types/OnPressEvent';
-import { SymbolLayerStyle } from '../Mapbox.native';
+import { SymbolLayerStyle } from '../vmapPlugin.native';
 
 import { SymbolLayer } from './SymbolLayer';
 

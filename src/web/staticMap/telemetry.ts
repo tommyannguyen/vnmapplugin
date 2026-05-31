@@ -10,7 +10,7 @@ const BLOCKED_HOSTS = ['events.mapbox.com', 'api.mapbox.com']
 
 export function suppressMapboxTelemetry(): void {
   const _fetch = window.fetch
-  window.fetch = (...args: Parameters<typeof fetch>) => {
+  window.fetch = ((...args: Parameters<typeof fetch>) => {
     const input = args[0]
     const url =
       typeof input === 'string'
@@ -22,5 +22,5 @@ export function suppressMapboxTelemetry(): void {
       return Promise.resolve(new Response('{}', { status: 200 }))
     }
     return _fetch(...args)
-  }
+  }) as typeof window.fetch
 }
