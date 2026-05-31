@@ -2,23 +2,19 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { RouteOverlay } from '../../src/components/RouteOverlay';
 
-const route: GeoJSON.LineString = {
-  type: 'LineString',
-  coordinates: [[106.63, 10.82], [106.64, 10.83]],
-};
 const meta = { distanceM: 1200, durationS: 480 };
 
 describe('RouteOverlay', () => {
   it('shows duration in minutes', () => {
     const { getByText } = render(
-      <RouteOverlay route={route} meta={meta} onCancel={jest.fn()} />,
+      <RouteOverlay meta={meta} onCancel={jest.fn()} />,
     );
     expect(getByText('8 phút')).toBeTruthy();
   });
 
   it('shows distance in km', () => {
     const { getByText } = render(
-      <RouteOverlay route={route} meta={meta} onCancel={jest.fn()} />,
+      <RouteOverlay meta={meta} onCancel={jest.fn()} />,
     );
     expect(getByText('1.2 km')).toBeTruthy();
   });
@@ -26,7 +22,7 @@ describe('RouteOverlay', () => {
   it('calls onCancel when Hủy is pressed', () => {
     const onCancel = jest.fn();
     const { getByText } = render(
-      <RouteOverlay route={route} meta={meta} onCancel={onCancel} />,
+      <RouteOverlay meta={meta} onCancel={onCancel} />,
     );
     fireEvent.press(getByText('✕ Hủy'));
     expect(onCancel).toHaveBeenCalledTimes(1);
@@ -34,7 +30,7 @@ describe('RouteOverlay', () => {
 
   it('rounds up partial minutes', () => {
     const { getByText } = render(
-      <RouteOverlay route={route} meta={{ distanceM: 500, durationS: 61 }} onCancel={jest.fn()} />,
+      <RouteOverlay meta={{ distanceM: 500, durationS: 61 }} onCancel={jest.fn()} />,
     );
     expect(getByText('2 phút')).toBeTruthy();
   });

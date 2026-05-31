@@ -109,7 +109,6 @@ export function MapScreen() {
 
       {state.activeRoute && state.routeMeta && (
         <RouteOverlay
-          route={state.activeRoute}
           meta={state.routeMeta}
           onCancel={handleCancelRoute}
         />
