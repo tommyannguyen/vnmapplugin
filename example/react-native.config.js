@@ -1,5 +1,5 @@
 const path = require('path');
-const pkg = require('../package.native');
+const pkg = require('../package.json');
 
 module.exports = {
   project: {
