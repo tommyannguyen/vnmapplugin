@@ -1,4 +1,4 @@
-import { VNMAP_BASE_URL } from '../styles/brand';
+import { VNMAP_BASE_URL, VNMAP_API_KEY } from '../styles/brand';
 import type { LatLng, Place } from './NavigationService';
 
 function haversineDistanceM(a: LatLng, b: LatLng): number {
@@ -27,7 +27,11 @@ export const GeocodingService = {
     const url = `${VNMAP_BASE_URL}/pelias/v1/search?${params}`;
 
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${VNMAP_API_KEY}`,
+        },
+      });
       if (!res.ok) return [];
       const data = await res.json();
       return (data.features ?? []).map((f: any): Place => {

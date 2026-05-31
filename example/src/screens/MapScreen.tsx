@@ -29,8 +29,10 @@ export function MapScreen() {
     return () => LocationService.stop();
   }, []);
 
+  const hasCenteredRef = useRef(false);
   useEffect(() => {
-    if (state.currentLocation) {
+    if (state.currentLocation && !hasCenteredRef.current) {
+      hasCenteredRef.current = true;
       cameraRef.current?.flyTo({
         center: [state.currentLocation.longitude, state.currentLocation.latitude],
         zoom: 15,
@@ -69,7 +71,7 @@ export function MapScreen() {
         <Camera
           ref={cameraRef}
           zoom={13}
-          centerCoordinate={[106.6297, 10.8231]}
+          center={[106.6297, 10.8231]}
         />
         <UserLocation visible />
 
@@ -78,14 +80,15 @@ export function MapScreen() {
             <Layer
               id="route-line"
               type="line"
-              style={{ lineColor: '#00b8d4', lineWidth: 4, lineJoin: 'round', lineCap: 'round' }}
+              paint={{ 'line-color': '#00b8d4', 'line-width': 4 }}
+              layout={{ 'line-join': 'round', 'line-cap': 'round' }}
             />
           </GeoJSONSource>
         )}
 
         {state.selectedPlace && (
           <Marker
-            coordinate={[
+            lngLat={[
               state.selectedPlace.coordinate.longitude,
               state.selectedPlace.coordinate.latitude,
             ]}

@@ -29,6 +29,7 @@ export function SearchScreen() {
     debounce(async (text: string) => {
       if (!text.trim()) { setResults([]); return; }
       const found = await GeocodingService.search(text, currentLocationRef.current);
+      navigationService.setSearchResults(found);
       setResults(found);
     }, 300),
   ).current;
