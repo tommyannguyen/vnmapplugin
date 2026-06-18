@@ -2,11 +2,6 @@ name: Capture README Screenshots
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "example/src/examples/**"
-      - "example/e2e/readmeScreenshots.e2e.js"
 
 jobs:
   screenshots:
