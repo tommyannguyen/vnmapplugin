@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
 
@@ -49,7 +49,7 @@ jobs:
         run: npx detox test -c ios e2e/readmeScreenshots.e2e.js --headless
 
       - name: Upload screenshots as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: readme-screenshots
           path: example/readme_assets/*.png

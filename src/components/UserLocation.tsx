@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import locationManager from '../modules/location/locationManager';
 import { type Location } from '../modules/location/locationManager';
-import { CircleLayerStyle } from '../Mapbox.native';
+import { CircleLayerStyle } from '../vmapPlugin.native';
 
 import Annotation from './Annotation';
 import CircleLayer from './CircleLayer';

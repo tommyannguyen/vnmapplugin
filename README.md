@@ -1,4 +1,3 @@
-
 # VnMapPlugin - Maps SDK for React Native
 
 [![npm version](https://badge.fury.io/js/%40vnmapplugin%2Fmaps.svg)](https://badge.fury.io/js/%40vnmapplugin%2Fmaps)
@@ -8,48 +7,20 @@ _A React Native library for building maps with the VnMapPlugin native SDK for iO
 
 ---
 
-## Screenshots
-
-> All screenshots below are captured automatically via [Detox E2E tests](./example/e2e/readmeScreenshots.e2e.js).
-
 <table>
 <tr>
-<td align="center"><b>Show Map</b></td>
-<td align="center"><b>Vietnam Boundary</b></td>
+<td align="center"><b>iOS</b></td>
+<td align="center"><b>Android</b></td>
 </tr>
 <tr>
-<td><img src="./example/readme_assets/show_map.png" width="300"/></td>
-<td><img src="./example/readme_assets/vietnam_boundary.png" width="300"/></td>
-</tr>
-<tr>
-<td align="center"><b>Custom Callout</b></td>
-<td align="center"><b>Data Driven Circle Colors</b></td>
-</tr>
-<tr>
-<td><img src="./example/readme_assets/custom_callout.png" width="300"/></td>
-<td><img src="./example/readme_assets/data_driven_circle_colors.png" width="300"/></td>
-</tr>
-<tr>
-<td align="center"><b>Choropleth Layer</b></td>
-<td align="center"><b>Clustering Earthquakes</b></td>
-</tr>
-<tr>
-<td><img src="./example/readme_assets/choropleth_layer.png" width="300"/></td>
-<td><img src="./example/readme_assets/clustering_earthquakes.png" width="300"/></td>
-</tr>
-<tr>
-<td align="center"><b>Image Overlay</b></td>
-<td align="center"><b>Animated Line</b></td>
-</tr>
-<tr>
-<td><img src="./example/readme_assets/image_overlay.png" width="300"/></td>
-<td><img src="./example/readme_assets/animated_line.png" width="300"/></td>
+<td><img src="./assets/indoor_building_map_ios.png" width="300"/></td>
+<td><img src="./assets/indoor_building_map_android.png" width="300"/></td>
 </tr>
 </table>
 
 ---
 
-## Prerequisite
+## Prerequisites
 
 1. Obtain your VnMapPlugin access token from your [VnMapPlugin account](https://github.com/tommyannguyen/vnmapplugin).
 
@@ -128,18 +99,18 @@ cd example && yarn android
 ### Components
 
 - [MapView](/docs/MapView.md)
-- [StyleImport](/docs/StyleImport.md)
-- [Light](/docs/Light.md)
-- [StyleSheet](/docs/StyleSheet.md)
+- [Camera](/docs/Camera.md)
+- [UserLocation](/docs/UserLocation.md)
+- [LocationPuck](/docs/LocationPuck.md)
 - [PointAnnotation](/docs/PointAnnotation.md)
 - [MarkerView](/docs/MarkerView.md)
 - [Callout](/docs/Callout.md)
-- [Camera](docs/Camera.md)
-- [UserLocation](docs/UserLocation.md)
-- [LocationPuck](docs/LocationPuck.md)
-- [Images](docs/Images.md)
-- [Image](docs/Image.md)
-- [Models](docs/Models.md)
+- [Images](/docs/Images.md)
+- [Image](/docs/Image.md)
+- [Models](/docs/Models.md)
+- [StyleImport](/docs/StyleImport.md)
+- [Light](/docs/Light.md)
+- [StyleSheet](/docs/StyleSheet.md)
 
 ### Sources
 
@@ -152,8 +123,8 @@ cd example && yarn android
 
 - [BackgroundLayer](/docs/BackgroundLayer.md)
 - [CircleLayer](/docs/CircleLayer.md)
-- [FillExtrusionLayer](/docs/FillExtrusionLayer.md)
 - [FillLayer](/docs/FillLayer.md)
+- [FillExtrusionLayer](/docs/FillExtrusionLayer.md)
 - [LineLayer](/docs/LineLayer.md)
 - [RasterLayer](/docs/RasterLayer.md)
 - [SymbolLayer](/docs/SymbolLayer.md)
@@ -177,6 +148,8 @@ cd example && yarn android
 - [CustomHttpHeaders](/docs/CustomHttpHeaders.md)
 - [Logger](/docs/Logger.md)
 
+---
+
 ## Expo Support
 
 This package is not available in [Expo Go](https://expo.io/client). Learn how to use it with [custom dev clients](/plugin/install.md).
@@ -186,26 +159,12 @@ This package is not available in [Expo Go](https://expo.io/client). Learn how to
 ```json
 "jest": {
   "preset": "react-native",
-  "setupFilesAfterSetup": ["@vnmapplugin/maps/setup-jest"],
+  "setupFilesAfterFramework": ["@vnmapplugin/maps/setup-jest"],
   "transformIgnorePatterns": [
     "node_modules/(?!(...|@vnmapplugin))"
   ]
 }
 ```
-
-## Capturing README Screenshots
-
-Screenshots are generated automatically by Detox E2E tests:
-
-```sh
-cd example
-npx detox build -c ios
-npx detox test -c ios e2e/readmeScreenshots.e2e.js
-```
-
-Screenshots are saved to `example/readme_assets/` and can also be triggered via the [Capture README Screenshots](https://github.com/tommyannguyen/vnmapplugin/actions/workflows/readme-screenshots.yml) GitHub Action.
-
----
 
 ## Contributing
 

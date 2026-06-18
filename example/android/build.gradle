@@ -52,6 +52,8 @@ allprojects {
         google()
         mavenCentral()
 
+        maven { url 'https://jitpack.io' }
+
         maven {
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             // Authentication is no longer required as per Mapbox's removal of download token requirement
